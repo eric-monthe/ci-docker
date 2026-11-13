@@ -1,0 +1,30 @@
+name: backend
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+    paths:
+      - "backend/**"
+      - "scripts/**"
+      - ".github/workflows/docker-ci.yml"
+      - ".github/workflows/backend.yml"
+  pull_request:
+    paths:
+      - "backend/**"
+      - "scripts/**"
+      - ".github/workflows/docker-ci.yml"
+      - ".github/workflows/backend.yml"
+
+jobs:
+  ci:
+    uses: ./.github/workflows/docker-ci.yml
+    with:
+      app: backend
+      image: workshop-organizer
+      # pull requests only run the tests
+      push: ${{ github.event_name != 'pull_request' }}
+    permissions:
+      contents: read
+      packages: write
+      checks: write

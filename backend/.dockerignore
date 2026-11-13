@@ -1,0 +1,7 @@
+build/
+.gradle/
+.git/
+.idea/
+.vscode/
+src/main/java-generated/
+.openapi-generator/

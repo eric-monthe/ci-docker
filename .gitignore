@@ -1,0 +1,13 @@
+# secrets
+.env
+
+# backups and build outputs
+backups/
+backend/build/
+frontend/dist/
+reports/
+
+# dependencies and caches
+node_modules/
+.angular/
+.gradle/
