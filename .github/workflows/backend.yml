@@ -4,17 +4,15 @@ on:
   push:
     branches: [main]
     tags: ["v*"]
-    paths:
+    paths: &paths
       - "backend/**"
       - "scripts/**"
       - ".github/workflows/docker-ci.yml"
       - ".github/workflows/backend.yml"
+      # documentation changes do not run the pipeline
+      - "!**/*.md"
   pull_request:
-    paths:
-      - "backend/**"
-      - "scripts/**"
-      - ".github/workflows/docker-ci.yml"
-      - ".github/workflows/backend.yml"
+    paths: *paths
 
 jobs:
   ci:
