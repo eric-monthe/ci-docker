@@ -11,3 +11,5 @@ reports/
 node_modules/
 .angular/
 .gradle/
+
+dist/
