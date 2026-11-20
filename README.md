@@ -89,3 +89,4 @@ GitHub Actions run the same tests in Docker (`scripts/run-tests.sh`), then push 
 
 - A workflow only runs when its app changes. Changes to `.md` files don't trigger any run.
 - To release a version: `git tag v1.0.0 && git push origin v1.0.0`
+- Final
