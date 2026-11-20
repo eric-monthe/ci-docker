@@ -11,6 +11,7 @@ on:
       - ".github/workflows/backend.yml"
       # documentation changes do not run the pipeline
       - "!**/*.md"
+      - "!release plan/**"
   pull_request:
     paths: *paths
 
